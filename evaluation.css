@@ -1,0 +1,305 @@
+/* =====================================================
+   Evaluation page - retro yellow, coral and teal palette
+   ===================================================== */
+
+:root {
+    --retro-yellow: #FFE66D;
+    --retro-coral: #FF666A;
+    --retro-teal: #50C9C3;
+    --retro-ink: #1a1a1a;
+}
+
+/* Page background and default text color */
+[data-testid="stAppViewContainer"],
+.stApp {
+    background-color: var(--retro-yellow) !important;
+    color: var(--retro-ink) !important;
+}
+
+[data-testid="stAppViewContainer"] h1,
+[data-testid="stAppViewContainer"] h2,
+[data-testid="stAppViewContainer"] h3,
+[data-testid="stAppViewContainer"] p,
+[data-testid="stAppViewContainer"] label,
+[data-testid="stAppViewContainer"] span {
+    color: var(--retro-ink);
+}
+
+/* Header bar */
+[data-testid="stHeader"] {
+    background: var(--retro-coral) !important;
+    border-bottom: 4px solid var(--retro-ink);
+}
+
+/* Alert boxes (success, warning, error) */
+[data-testid="stAlert"] {
+    background: #ffffff !important;
+    border: 3px solid var(--retro-ink) !important;
+    border-radius: 14px !important;
+    box-shadow: 6px 6px 0 var(--retro-ink) !important;
+}
+
+[data-testid="stAlert"] p,
+[data-testid="stAlert"] svg {
+    color: var(--retro-ink) !important;
+    fill: var(--retro-ink) !important;
+}
+
+[data-testid="stAlertContainer"] {
+    background: transparent !important;
+}
+
+/* Toast notifications */
+[data-testid="stNotification"] {
+    border: 3px solid var(--retro-ink) !important;
+    border-radius: 12px !important;
+    box-shadow: 4px 4px 0 var(--retro-ink) !important;
+}
+
+/* Response A and B fields (read-only): teal and coral backgrounds.
+   The :has() selectors style the BaseWeb wrapper around the textarea. */
+[data-testid="stTextArea"] textarea[aria-label="Response A"],
+[data-testid="stTextArea"] textarea[aria-label="Response B"],
+[data-testid="stTextArea"]:has(textarea[aria-label="Response A"]) textarea,
+[data-testid="stTextArea"]:has(textarea[aria-label="Response B"]) textarea {
+    color: var(--retro-ink) !important;
+    -webkit-text-fill-color: var(--retro-ink) !important;
+    opacity: 1 !important;
+    border: 3px solid var(--retro-ink) !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    box-shadow: 5px 5px 0 var(--retro-ink) !important;
+}
+
+[data-testid="stTextArea"]:has(textarea[aria-label="Response A"]) textarea {
+    background: var(--retro-teal) !important;
+}
+
+[data-testid="stTextArea"]:has(textarea[aria-label="Response B"]) textarea {
+    background: var(--retro-coral) !important;
+}
+
+/* Justification field (the only editable textarea): plain white */
+[data-testid="stTextArea"] textarea:not(:disabled) {
+    background: #ffffff !important;
+    color: var(--retro-ink) !important;
+    -webkit-text-fill-color: var(--retro-ink) !important;
+    border: 3px solid var(--retro-ink) !important;
+    border-radius: 12px !important;
+    box-shadow: 4px 4px 0 var(--retro-ink) !important;
+}
+
+/* Text input fields */
+[data-testid="stTextInput"] input {
+    color: var(--retro-ink) !important;
+    -webkit-text-fill-color: var(--retro-ink) !important;
+    background-color: #ffffff !important;
+}
+
+/* Rating slider.
+   Streamlit has shipped two slider implementations; the rules for both
+   are kept here - only the one matching your version will apply. */
+
+/* BaseWeb slider: track, thumb and tick labels */
+[data-testid="stSlider"] [data-baseweb="slider"] [data-testid="stTrack"] {
+    background: #ffffff !important;
+    border: 2px solid var(--retro-ink) !important;
+    border-radius: 8px !important;
+}
+
+[data-testid="stSlider"] [data-baseweb="slider"] [role="slider"] {
+    background: var(--retro-coral) !important;
+    border: 3px solid var(--retro-ink) !important;
+    box-shadow: 2px 2px 0 var(--retro-ink) !important;
+}
+
+[data-testid="stSlider"] [data-testid="stTickBar"] span {
+    color: var(--retro-ink) !important;
+    font-weight: 700 !important;
+}
+
+[data-testid="stSlider"] [data-testid="stThumbValue"] {
+    background: var(--retro-ink) !important;
+    color: var(--retro-yellow) !important;
+    font-weight: 700 !important;
+    border-radius: 6px !important;
+}
+
+/* React Aria slider: rail and thumb */
+[data-testid="stSlider"] [role="group"][data-orientation="horizontal"]>div[data-rac][data-orientation="horizontal"]>div:first-child {
+    background: #ffffff !important;
+    height: 10px !important;
+    border: 2px solid var(--retro-ink) !important;
+    border-radius: 8px !important;
+}
+
+[data-testid="stSlider"] [role="group"][data-orientation="horizontal"]>div[data-rac][data-orientation="horizontal"]>div[data-rac] {
+    background: var(--retro-coral) !important;
+    width: 22px !important;
+    height: 22px !important;
+    min-height: 22px !important;
+    max-height: 22px !important;
+    border: 3px solid var(--retro-ink) !important;
+    border-radius: 50% !important;
+    box-shadow: 2px 2px 0 var(--retro-ink) !important;
+}
+
+[data-testid="stSlider"] [data-testid="stSliderThumbValue"] {
+    z-index: 1;
+    background: var(--retro-ink) !important;
+    color: var(--retro-yellow) !important;
+    border-radius: 6px !important;
+    padding: 2px 6px !important;
+    font-weight: 700 !important;
+}
+
+[data-testid="stSlider"] [data-testid="stSliderThumbValue"] p {
+    color: var(--retro-yellow) !important;
+}
+
+/* Winner choice buttons as outlined pills; selected option in teal */
+[data-testid="stRadio"] [role="radiogroup"] {
+    gap: 12px !important;
+}
+
+[data-testid="stRadio"] [role="radiogroup"] label {
+    background: #ffffff !important;
+    border: 3px solid var(--retro-ink) !important;
+    border-radius: 999px !important;
+    box-shadow: 4px 4px 0 var(--retro-ink) !important;
+    padding: 7px 16px !important;
+    font-weight: 700 !important;
+}
+
+[data-testid="stRadio"] [role="radiogroup"] label:has(input:checked) {
+    background: var(--retro-teal) !important;
+}
+
+/* Dropdown and multi-select fields */
+[data-testid="stSelectbox"] [data-baseweb="select"]>div,
+[data-testid="stMultiSelect"] [data-baseweb="select"]>div {
+    background: #ffffff !important;
+    border: 3px solid var(--retro-ink) !important;
+    border-radius: 12px !important;
+}
+
+/* Horizontal dividers */
+[data-testid="stDivider"] hr,
+hr {
+    border-color: var(--retro-ink) !important;
+    border-width: 2px !important;
+}
+
+/* Primary buttons: teal with a hover state in coral */
+button[kind="primary"] {
+    background: var(--retro-teal) !important;
+    color: var(--retro-ink) !important;
+    border: 3px solid var(--retro-ink) !important;
+    border-radius: 12px !important;
+    box-shadow: 5px 5px 0 var(--retro-ink) !important;
+    font-weight: 800 !important;
+    font-size: 17px !important;
+    padding: 10px 28px !important;
+    transition: all 0.15s ease;
+}
+
+button[kind="primary"]:hover {
+    background: var(--retro-coral) !important;
+    color: var(--retro-ink) !important;
+    transform: translate(2px, 2px);
+    box-shadow: 3px 3px 0 var(--retro-ink) !important;
+}
+
+/* =====================================================
+   Sidebar (retro theme)
+   ===================================================== */
+
+/* Sidebar background and border */
+[data-testid="stSidebar"] {
+    background-color: #FFE66D;
+    border-right: 4px solid #1a1a1a;
+}
+
+/* Navigation links styled as cards */
+[data-testid="stSidebarNav"] ul {
+    gap: 12px;
+    padding-top: 8px;
+}
+
+[data-testid="stSidebarNav"] a {
+    border: 3px solid #1a1a1a;
+    border-radius: 12px;
+    box-shadow: 4px 4px 0 #1a1a1a;
+    background: #ffffff;
+    color: #1a1a1a !important;
+    font-weight: 700;
+    padding: 10px 14px !important;
+    transition: background 0.15s ease;
+}
+
+[data-testid="stSidebarNav"] a:hover {
+    background: #50C9C3;
+}
+
+/* Currently open page */
+[data-testid="stSidebarNav"] a[aria-current="page"] {
+    background: #FF666A;
+    color: #ffffff !important;
+}
+
+/* =====================================================
+   Tables, dataframes and download button
+   ===================================================== */
+
+/* st.table */
+[data-testid="stTable"] table {
+    background-color: #ffffff;
+    border: 3px solid #1a1a1a;
+    border-radius: 12px;
+    box-shadow: 5px 5px 0 #1a1a1a;
+    overflow: hidden;
+}
+
+[data-testid="stTable"] th {
+    background-color: #FF666A;
+    color: #1a1a1a;
+    font-weight: 800;
+    border-bottom: 3px solid #1a1a1a;
+}
+
+[data-testid="stTable"] td {
+    color: #1a1a1a;
+    border-bottom: 1px solid #dddddd;
+}
+
+[data-testid="stTable"] p,
+[data-testid="stTable"] span,
+[data-testid="stTable"] div {
+    color: #1a1a1a !important;
+}
+
+/* st.dataframe */
+[data-testid="stDataFrame"] {
+    border: 3px solid #1a1a1a;
+    border-radius: 12px;
+    box-shadow: 5px 5px 0 #1a1a1a;
+    overflow: hidden;
+}
+
+/* Download button */
+[data-testid="stDownloadButton"] button {
+    background-color: #50C9C3;
+    color: #1a1a1a;
+    border: 3px solid #1a1a1a;
+    border-radius: 12px;
+    box-shadow: 4px 4px 0 #1a1a1a;
+    font-weight: 800;
+    transition: all 0.15s ease;
+}
+
+[data-testid="stDownloadButton"] button:hover {
+    background-color: #FF666A;
+    color: #1a1a1a;
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #1a1a1a;
+}
