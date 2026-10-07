@@ -50,8 +50,9 @@ def delete_all_users():
 # To run the delete code:
 # python database.py
 
-if __name__ == "__main__":
-    delete_all_users()
+# if __name__ == "__main__":
+#   delete_all_users()
+    
 
 
 # -------------------------------------------------
